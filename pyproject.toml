@@ -1,0 +1,25 @@
+[project]
+name = "mfagent"
+version = "0.1.0"
+description = "LangGraph research agent over the mf-analytics-pipeline API"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28",
+    "langgraph>=1.0",
+    "langchain-google-genai>=4.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
